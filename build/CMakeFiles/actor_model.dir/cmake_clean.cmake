@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o.d"
   "CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o"
   "CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o.d"
+  "CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o"
+  "CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o.d"
   "CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o"
   "CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o.d"
   "CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o"

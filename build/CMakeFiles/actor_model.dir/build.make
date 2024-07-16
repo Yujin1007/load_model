@@ -97,10 +97,24 @@ CMakeFiles/actor_model.dir/src/networks/LSTM.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/actor_model.dir/src/networks/LSTM.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kist-robot2/Desktop/RA-L/load_model/src/networks/LSTM.cpp -o CMakeFiles/actor_model.dir/src/networks/LSTM.cpp.s
 
+CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o: CMakeFiles/actor_model.dir/flags.make
+CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/MLP.cpp
+CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/MLP.cpp
+
+CMakeFiles/actor_model.dir/src/networks/MLP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/actor_model.dir/src/networks/MLP.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kist-robot2/Desktop/RA-L/load_model/src/networks/MLP.cpp > CMakeFiles/actor_model.dir/src/networks/MLP.cpp.i
+
+CMakeFiles/actor_model.dir/src/networks/MLP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/actor_model.dir/src/networks/MLP.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kist-robot2/Desktop/RA-L/load_model/src/networks/MLP.cpp -o CMakeFiles/actor_model.dir/src/networks/MLP.cpp.s
+
 CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o: CMakeFiles/actor_model.dir/flags.make
 CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Linear.cpp
 CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Linear.cpp
 
 CMakeFiles/actor_model.dir/src/networks/Linear.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/actor_model.dir/src/networks/Linear.cpp.s: cmake_force
 CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o: CMakeFiles/actor_model.dir/flags.make
 CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/LayerNorm.cpp
 CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/LayerNorm.cpp
 
 CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.s: cmake_force
 CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o: CMakeFiles/actor_model.dir/flags.make
 CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/NormalizedMLP.cpp
 CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/NormalizedMLP.cpp
 
 CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.s: cmake_force
 CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o: CMakeFiles/actor_model.dir/flags.make
 CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Actor.cpp
 CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Actor.cpp
 
 CMakeFiles/actor_model.dir/src/networks/Actor.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/actor_model.dir/src/networks/Actor.cpp.s: cmake_force
 CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o: CMakeFiles/actor_model.dir/flags.make
 CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o: /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Utils.cpp
 CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o: CMakeFiles/actor_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o -MF CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o.d -o CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o -c /home/kist-robot2/Desktop/RA-L/load_model/src/networks/Utils.cpp
 
 CMakeFiles/actor_model.dir/src/networks/Utils.cpp.i: cmake_force
@@ -171,6 +185,7 @@ CMakeFiles/actor_model.dir/src/networks/Utils.cpp.s: cmake_force
 actor_model_OBJECTS = \
 "CMakeFiles/actor_model.dir/src/main.cpp.o" \
 "CMakeFiles/actor_model.dir/src/networks/LSTM.cpp.o" \
+"CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o" \
 "CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o" \
 "CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o" \
 "CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o" \
@@ -182,6 +197,7 @@ actor_model_EXTERNAL_OBJECTS =
 
 actor_model: CMakeFiles/actor_model.dir/src/main.cpp.o
 actor_model: CMakeFiles/actor_model.dir/src/networks/LSTM.cpp.o
+actor_model: CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o
 actor_model: CMakeFiles/actor_model.dir/src/networks/Linear.cpp.o
 actor_model: CMakeFiles/actor_model.dir/src/networks/LayerNorm.cpp.o
 actor_model: CMakeFiles/actor_model.dir/src/networks/NormalizedMLP.cpp.o
@@ -189,7 +205,7 @@ actor_model: CMakeFiles/actor_model.dir/src/networks/Actor.cpp.o
 actor_model: CMakeFiles/actor_model.dir/src/networks/Utils.cpp.o
 actor_model: CMakeFiles/actor_model.dir/build.make
 actor_model: CMakeFiles/actor_model.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable actor_model"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kist-robot2/Desktop/RA-L/load_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable actor_model"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/actor_model.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

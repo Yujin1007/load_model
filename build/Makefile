@@ -249,6 +249,30 @@ src/networks/Linear.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/actor_model.dir/build.make CMakeFiles/actor_model.dir/src/networks/Linear.cpp.s
 .PHONY : src/networks/Linear.cpp.s
 
+src/networks/MLP.o: src/networks/MLP.cpp.o
+.PHONY : src/networks/MLP.o
+
+# target to build an object file
+src/networks/MLP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/actor_model.dir/build.make CMakeFiles/actor_model.dir/src/networks/MLP.cpp.o
+.PHONY : src/networks/MLP.cpp.o
+
+src/networks/MLP.i: src/networks/MLP.cpp.i
+.PHONY : src/networks/MLP.i
+
+# target to preprocess a source file
+src/networks/MLP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/actor_model.dir/build.make CMakeFiles/actor_model.dir/src/networks/MLP.cpp.i
+.PHONY : src/networks/MLP.cpp.i
+
+src/networks/MLP.s: src/networks/MLP.cpp.s
+.PHONY : src/networks/MLP.s
+
+# target to generate assembly for a file
+src/networks/MLP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/actor_model.dir/build.make CMakeFiles/actor_model.dir/src/networks/MLP.cpp.s
+.PHONY : src/networks/MLP.cpp.s
+
 src/networks/NormalizedMLP.o: src/networks/NormalizedMLP.cpp.o
 .PHONY : src/networks/NormalizedMLP.o
 
@@ -321,6 +345,9 @@ help:
 	@echo "... src/networks/Linear.o"
 	@echo "... src/networks/Linear.i"
 	@echo "... src/networks/Linear.s"
+	@echo "... src/networks/MLP.o"
+	@echo "... src/networks/MLP.i"
+	@echo "... src/networks/MLP.s"
 	@echo "... src/networks/NormalizedMLP.o"
 	@echo "... src/networks/NormalizedMLP.i"
 	@echo "... src/networks/NormalizedMLP.s"
