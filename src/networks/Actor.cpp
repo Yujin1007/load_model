@@ -16,11 +16,13 @@ void Actor::load_weights(const std::string &directory) {
 Eigen::VectorXd Actor::forward(const Eigen::MatrixXd &input) {
     Eigen::MatrixXd lstm_output = lstm_feature_extractor->forward(input);
     Eigen::MatrixXd last_output = lstm_output.col(lstm_output.cols() - 1); // Take the last output of the LSTM
-    std::cout<<"forward lstm"<<std::endl;
+    // std::cout<<"forward lstm"<<std::endl;
     // std::cout<<last_output<<std::endl;
     Eigen::MatrixXd log_output = net->forward(last_output);
+    // std::cout<<"log output"<<log_output.transpose()<<std::endl;
     Eigen::VectorXd output = log_output.topRows(2).array().tanh();
     // Eigen::VectorXd output = log_output.array().tanh();
-    std::cout<<output.transpose()<<std::endl;
+
+    // std::cout<<"output"<<output.transpose()<<std::endl;
     return output;
 }

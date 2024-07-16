@@ -13,7 +13,7 @@ int main() {
     cout<<" Create the Actor model"<<endl;
     Actor actor(state_dim, lstm_hidden_dim, mlp_hidden_dim, output_dim);
     cout<<" Load model parameters from CSV files"<<endl;
-    std::string directory = "/home/summit-nuc/Desktop/Valve/load_model/src/networks/weights/rotation/";
+    std::string directory = "/home/kist-robot2/Franka/franka_valve/py_src/weight/rotation/";
     actor.load_weights(directory);
     
     cout<<" Create a sample input (batch size 1, sequence length 10, state_dim features)"<<endl;

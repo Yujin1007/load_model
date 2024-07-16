@@ -3,7 +3,7 @@
 #include "networks/Utils.h"
 #include <iostream>
 
-LayerNorm::LayerNorm(int dim) : dim(dim) {}
+LayerNorm::LayerNorm(int dim, double eps) : dim(dim), eps(eps) {}
 
 void LayerNorm::load_weights(const std::string &prefix)
 {
@@ -11,33 +11,22 @@ void LayerNorm::load_weights(const std::string &prefix)
     beta = readCSV(prefix + "_bias.csv");
 }
 
-Eigen::MatrixXd LayerNorm::forward(const Eigen::MatrixXd &input) {
+Eigen::MatrixXd LayerNorm::forward(const Eigen::MatrixXd &input)
+{
     Eigen::VectorXd mean = input.colwise().mean();
+
     Eigen::MatrixXd centered = input.rowwise() - mean.transpose();
-    Eigen::VectorXd variance = (centered.array().square().colwise().sum() / (input.rows() - 1)).transpose();
 
-    Eigen::VectorXd stddev = (variance.array() + 1e-5).sqrt();
+    // Calculate variance for each feature (column)
+    Eigen::VectorXd variance = centered.array().square().colwise().mean();
+    Eigen::VectorXd stddev = (variance.array() + eps).sqrt();
+    // Eigen::MatrixXd normalized = centered.array().rowwise() / stddev.transpose().array();
+    Eigen::VectorXd normalized = centered.array().rowwise() / stddev.transpose().array();
+    // std::cout<<"normalized:"<<normalized.cols()<<"x"<<normalized.rows()<<" gamma::"<<gamma.cols()<<"x"<<gamma.rows()<<std::endl;
 
-    Eigen::MatrixXd normalized = centered.array().rowwise() / stddev.transpose().array();
-
-    if (gamma.size() == input.cols() && beta.size() == input.cols()) {
-        normalized = normalized.array().rowwise() * gamma.transpose().array();
-        normalized = normalized.array().rowwise() + beta.transpose().array();
-    }
-
-    return normalized;
+    normalized = normalized.array() * gamma.array();
+    normalized = normalized.array() + beta.array();
+    // std::cout << normalized.transpose() << std::endl;
+    Eigen::MatrixXd normalized_matrix = normalized;
+    return normalized_matrix;
 }
-// Eigen::MatrixXd LayerNorm::forward(const Eigen::MatrixXd &input) {
-//     Eigen::VectorXd mean = input.colwise().mean();
-//     std::cout << "Shape of m: (" << mean.size() << ", 1)\n";
-//     Eigen::VectorXd variance = ((input.rowwise() - mean.transpose()).array().square().colwise().mean());
-//     std::cout << "Shape of v: (" << variance.size() << ", 1)\n";
-
-//     // Eigen::VectorXd normalized = (input.rowwise() - mean.transpose()).array().rowwise() / variance.sqrt().transpose().array();
-//     Eigen::VectorXd normalized = (input.rowwise() - mean.transpose()).array().rowwise() / variance.array().sqrt().transpose().array();
-//     std::cout << "Shape of n: (" << normalized.size() << ", 1)\n";
-//     std::cout << "Shape of gamma: (" << gamma.size() << ", 1)\n";
-//     std::cout << "Shape of beta: (" << beta.size() << ", 1)\n";
-
-//     return (normalized.array().rowwise() * gamma.transpose().array()).matrix() + beta.transpose();
-// }
