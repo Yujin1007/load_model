@@ -3,6 +3,8 @@
 #include "networks/NormalizedMLP.h"
 #include "networks/MLP.h"
 #include <iostream>
+#include <chrono>
+
 
 ActorR::ActorR(int state_dim, int lstm_hidden_dim, int mlp_hidden_dim, int output_dim) {
     lstm_feature_extractor = new LSTM(state_dim, lstm_hidden_dim);
@@ -16,10 +18,20 @@ void ActorR::load_weights(const std::string &directory) {
 }
 
 Eigen::VectorXd ActorR::forward(const Eigen::MatrixXd &input) {
+    std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
+
     Eigen::MatrixXd lstm_output = lstm_feature_extractor->forward(input);
+
+    std::chrono::duration<double>sec = std::chrono::system_clock::now() - start;
+    std::cout << "LSTM 걸리는 시간(초) : " << sec.count() *1000<<"ms"<< std::endl;
+
+    start = std::chrono::system_clock::now();
     Eigen::MatrixXd last_output = lstm_output.col(lstm_output.cols() - 1); // Take the last output of the LSTM
     Eigen::MatrixXd log_output = net->forward(last_output);
     Eigen::VectorXd output = log_output.topRows(2).array().tanh();
+    sec = std::chrono::system_clock::now() - start;
+    std::cout << "MLP 걸리는 시간(초) : " << sec.count() *1000<<"ms"<< std::endl;
+
     return output;
 }
 
@@ -35,10 +47,25 @@ void ActorF::load_weights(const std::string &directory) {
 }
 
 Eigen::VectorXd ActorF::forward(const Eigen::MatrixXd &input) {
+    std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
+
     Eigen::MatrixXd lstm_output = lstm_feature_extractor->forward(input);
+
+    std::chrono::duration<double>sec = std::chrono::system_clock::now() - start;
+    std::cout << "LSTM 걸리는 시간(초) : " << sec.count() *1000<<"ms"<< std::endl;
+
+
+    start = std::chrono::system_clock::now();
+
     Eigen::MatrixXd last_output = lstm_output.col(lstm_output.cols() - 1); // Take the last output of the LSTM
+
+
     Eigen::MatrixXd log_output = net->forward(last_output);
     Eigen::VectorXd output = log_output.topRows(1).array().tanh();
+
+    sec = std::chrono::system_clock::now() - start;
+    std::cout << "MLP 걸리는 시간(초) : " << sec.count() *1000<<"ms"<< std::endl;
+
     return output;
 }
 
