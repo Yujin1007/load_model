@@ -8,7 +8,7 @@
 
 class MLP {
 public:
-    MLP(int input_dim, int hidden_dim, int output_dim);
+    MLP(int input_dim, std::array<int, 2> hidden_dim, int output_dim);
     void load_weights(const std::string &directory);
     Eigen::MatrixXd forward(const Eigen::MatrixXd &input);
 

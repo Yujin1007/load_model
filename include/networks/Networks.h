@@ -9,7 +9,7 @@
 
 class ActorR {
 public:
-    ActorR(int state_dim, int lstm_hidden_dim, int mlp_hidden_dim, int output_dim);
+    ActorR(int state_dim, int lstm_hidden_dim, std::array<int, 2> mlp_hidden_dim, int output_dim);
     void load_weights(const std::string &directory);
     Eigen::VectorXd forward(const Eigen::MatrixXd &input);
 
@@ -20,12 +20,22 @@ private:
 
 class ActorF {
 public:
-    ActorF(int state_dim, int lstm_hidden_dim, int mlp_hidden_dim, int output_dim);
+    ActorF(int state_dim, int lstm_hidden_dim, std::array<int, 2> mlp_hidden_dim, int output_dim);
     void load_weights(const std::string &directory);
     Eigen::VectorXd forward(const Eigen::MatrixXd &input);
 
 private:
     LSTM *lstm_feature_extractor;
+    MLP *net;
+};
+
+class Actor {
+public:
+    Actor(int state_dim, std::array<int, 2> mlp_hidden_dim, int output_dim);
+    void load_weights(const std::string &directory);
+    Eigen::VectorXd forward(const Eigen::MatrixXd &input);
+
+private:
     MLP *net;
 };
 

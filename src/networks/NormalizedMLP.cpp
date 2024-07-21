@@ -4,12 +4,12 @@
 #include "networks/LSTM.h"
 #include <iostream>
 
-NormalizedMLP::NormalizedMLP(int input_dim, int hidden_dim, int output_dim) {
-    layer1 = new Linear(input_dim, hidden_dim);
-    norm1 = new LayerNorm(hidden_dim);
-    layer2 = new Linear(hidden_dim, hidden_dim);
-    norm2 = new LayerNorm(hidden_dim);
-    layer3 = new Linear(hidden_dim, output_dim);
+NormalizedMLP::NormalizedMLP(int input_dim, std::array<int,2> hidden_dim, int output_dim) {
+    layer1 = new Linear(input_dim, hidden_dim[0]);
+    norm1 = new LayerNorm(hidden_dim[0]);
+    layer2 = new Linear(hidden_dim[0], hidden_dim[1]);
+    norm2 = new LayerNorm(hidden_dim[1]);
+    layer3 = new Linear(hidden_dim[1], output_dim);
 }
 
 void NormalizedMLP::load_weights(const std::string &directory) {

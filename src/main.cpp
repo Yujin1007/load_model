@@ -8,13 +8,24 @@ int main() {
     // Define dimensions
     int state_dim = 31;
     int lstm_hidden_dim = 256;
-    int mlp_hidden_dim = 256;
+    array<int,2> mlp_hidden_dim = {256,256};
+    // array<int,2> mlp_hidden_dim = {512,256};
     int output_dim1 = 4;
     int output_dim2 = 2;
 
     Classifier classifier(8, 20);
 
-    cout<<" Create the Actor model"<<endl;
+    // cout<<" Create the Actor model"<<endl;
+    // Actor actorr(state_dim, mlp_hidden_dim, output_dim1);
+    // Actor actorf(state_dim, mlp_hidden_dim, output_dim2);
+    // cout<<" Load model parameters from CSV files"<<endl;
+    // std::string directory1 = "/home/kist-robot2/Franka/franka_valve_new/py_src/weight/rotation/";
+    // actorr.load_weights(directory1);
+    // std::string directory2 = "/home/kist-robot2/Franka/franka_valve_new/py_src/weight/force/";
+    // actorf.load_weights(directory2);
+
+    // cout<<" Create a sample input (batch size 1, sequence length 10, state_dim features)"<<endl;
+    // Eigen::MatrixXd input = Eigen::MatrixXd::Ones(state_dim, 1);
     ActorR actorr(state_dim, lstm_hidden_dim, mlp_hidden_dim, output_dim1);
     ActorF actorf(state_dim, lstm_hidden_dim, mlp_hidden_dim, output_dim2);
     cout<<" Load model parameters from CSV files"<<endl;
@@ -25,6 +36,7 @@ int main() {
 
     cout<<" Create a sample input (batch size 1, sequence length 10, state_dim features)"<<endl;
     Eigen::MatrixXd input = Eigen::MatrixXd::Ones(state_dim, 10);
+
 
     cout<<" Forward pass"<<endl;
 //    auto start = std::chrono::high_resolution_clock::now();

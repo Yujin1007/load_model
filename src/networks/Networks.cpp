@@ -6,7 +6,7 @@
 #include <chrono>
 
 
-ActorR::ActorR(int state_dim, int lstm_hidden_dim, int mlp_hidden_dim, int output_dim) {
+ActorR::ActorR(int state_dim, int lstm_hidden_dim, std::array<int, 2> mlp_hidden_dim, int output_dim) {
     lstm_feature_extractor = new LSTM(state_dim, lstm_hidden_dim);
     net = new NormalizedMLP(lstm_hidden_dim, mlp_hidden_dim, output_dim);
 }
@@ -35,7 +35,7 @@ Eigen::VectorXd ActorR::forward(const Eigen::MatrixXd &input) {
     return output;
 }
 
-ActorF::ActorF(int state_dim, int lstm_hidden_dim, int mlp_hidden_dim, int output_dim) {
+ActorF::ActorF(int state_dim, int lstm_hidden_dim, std::array<int, 2> mlp_hidden_dim, int output_dim) {
     lstm_feature_extractor = new LSTM(state_dim, lstm_hidden_dim);
     net = new MLP(lstm_hidden_dim, mlp_hidden_dim, output_dim);
 }
@@ -68,6 +68,30 @@ Eigen::VectorXd ActorF::forward(const Eigen::MatrixXd &input) {
 
     return output;
 }
+
+Actor::Actor(int state_dim, std::array<int, 2> mlp_hidden_dim, int output_dim) {
+    net = new MLP(state_dim, mlp_hidden_dim, output_dim);
+}
+
+
+void Actor::load_weights(const std::string &directory) {
+    net->load_weights(directory);
+}
+
+Eigen::VectorXd Actor::forward(const Eigen::MatrixXd &input) {
+    std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
+
+    Eigen::MatrixXd log_output = net->forward(input);
+    Eigen::VectorXd output = log_output.topRows(1).array().tanh();
+
+    std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
+    std::cout << "MLP 걸리는 시간(초) : " << sec.count() *1000<<"ms"<< std::endl;
+
+    return output;
+}
+
+
+
 
 
 Classifier::Classifier(int state_dim, int output_dim) {
